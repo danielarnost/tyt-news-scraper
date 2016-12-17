@@ -1,0 +1,54 @@
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+      
+          <div class="col-xs-6 text-center">
+
+                <h1>Young Turks News Scraper</h1>
+
+            </div>
+        </div>
+    </div>
+
+
+<div class="row">
+      <div class="section">
+          <div class="col-xs-6">
+
+            {{#each articles}}
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title text-center" style="color:black;">{{title}}</h4>
+                  </div>
+                <div class="panel-body text-center">
+                <div class ="link">
+          <h4><a href="{{link}}">Get full article</a></h4>
+                </div>
+
+            <div class ="comments">         
+                  <h3>Leave a comment:</h3>                
+
+            {{#each comment}}
+              <p> {{body}}    
+
+                <form action="/delete/{{id}}" method="POST">
+                  <button name="deleteComment" type="submit" class="btn btn-danger">Delete Comment</button>
+                </form>
+                </p>
+              <br>
+            {{/each}}            
+           </div>      
+
+            <form action="/submit/{{id}}" method="POST">                    
+              <textarea name="body" "width=:200px;" placeholder="Leave an opinion!"></textarea>
+              <br />
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">Comment</i>
+            </button>
+            </form>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+</div>
