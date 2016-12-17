@@ -30,7 +30,7 @@ app.set("view engine", "handlebars");
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/newsScraper");
+mongoose.connect("mongodb://heroku_jjhpmd04:v8v92rufumnqmfni7qqnmcg9s1@ds039880.mlab.com:39880/heroku_jjhpmd04");
 var db = mongoose.connection;
 
 db.on("error", function(error) {
